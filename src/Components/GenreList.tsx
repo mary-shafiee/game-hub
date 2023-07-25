@@ -33,7 +33,7 @@ const GenreList = ({ onSelectedGenre, selectedGenre }: Props) => {
                 src={getCroppedImageUrl(genre.image_background)}
               />
               <Button
-                color={genre.id === selectedGenre?.id ? "blue" : ''}
+                color={genre.id === selectedGenre?.id ? "#78C1F3" : ''}
                 onClick={() => {
                   onSelectedGenre(genre);
                 }}
