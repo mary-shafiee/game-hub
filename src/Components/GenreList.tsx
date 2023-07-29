@@ -5,9 +5,7 @@ import {
   Image,
   List,
   ListItem,
-  Text,
-  color,
-  styled,
+ 
 } from "@chakra-ui/react";
 import useGenres from "../hooks/useGenres";
 import getCroppedImageUrl from "../Services/image-url";
