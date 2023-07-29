@@ -10,7 +10,12 @@ import {
 import useGenres from "../hooks/useGenres";
 import getCroppedImageUrl from "../Services/image-url";
 import GenreSkeleton from "./GenreSkeleton";
-import { Genre } from "../hooks/useGenres";
+// import { Genre } from "../hooks/useGenres";
+export interface Genre {
+  id: number;
+  name: string;
+  image_background: string;
+}
 interface Props {
   onSelectedGenre: (genre: Genre) => void;
   selectedGenre: Genre | null;
