@@ -5,11 +5,11 @@ import {
   Image,
   List,
   ListItem,
- 
 } from "@chakra-ui/react";
 import useGenres from "../hooks/useGenres";
 import getCroppedImageUrl from "../Services/image-url";
 import GenreSkeleton from "./GenreSkeleton";
+
 // import { Genre } from "../hooks/useGenres";
 export interface Genre {
   id: number;
@@ -33,7 +33,7 @@ const GenreList = ({ onSelectedGenre, selectedGenre }: Props) => {
 
       <List>
         {data &&
-          data.map((genre) => (
+          data.results.map((genre) => (
             <ListItem key={genre.id} paddingY={2}>
               <HStack gap={1}>
                 <Image
