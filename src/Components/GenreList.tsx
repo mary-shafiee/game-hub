@@ -18,9 +18,12 @@ export interface Genre {
 }
 interface Props {
   onSelectedGenre: (genre: Genre) => void;
-  selectedGenre: Genre | null;
+  selectedGenreId?: number;
 }
-const GenreList = ({ onSelectedGenre, selectedGenre }: Props) => {
+const GenreList = ({
+  onSelectedGenre,
+  selectedGenreId
+}: Props) => {
   const { data, isLoading, error } = useGenres();
 
   if (error) return null;
@@ -45,7 +48,7 @@ const GenreList = ({ onSelectedGenre, selectedGenre }: Props) => {
                 <Button
                   textAlign="left"
                   whiteSpace="normal"
-                  color={genre.id === selectedGenre?.id ? "#78C1F3" : ""}
+                  color={genre.id === selectedGenreId ? "#78C1F3" : ""}
                   onClick={() => {
                     onSelectedGenre(genre);
                   }}
