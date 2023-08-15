@@ -1,28 +1,22 @@
 import { Box, Flex, Grid, GridItem, Show } from "@chakra-ui/react";
-import "./App.css";
-import GameGrid from "./Components/GameGrid";
-import GameHeading from "./Components/GameHeading";
-import GenreList from "./Components/GenreList";
-import NavBar from "./Components/NavBar";
-import PlatformSelector from "./Components/PlatformSelector";
-import SortSelector from "./Components/SortSelector";
-import useGameQueryStore from "./store";
+import GenreList from "../Components/GenreList";
+import GameHeading from "../Components/GameHeading";
+import PlatformSelector from "../Components/PlatformSelector";
+import SortSelector from "../Components/SortSelector";
+import GameGrid from "../Components/GameGrid";
 
-function App() {
+const HomePage = () => {
   return (
     <Grid
       templateAreas={{
-        base: `"nav" "main"`,
-        lg: `"nav nav" "aside main"`,
+        base: ` "main"`,
+        lg: ` "aside main"`,
       }}
       templateColumns={{
         base: "1fr",
         lg: "280px 1fr",
       }}
     >
-      <GridItem area="nav">
-        <NavBar />
-      </GridItem>
       <Show above="lg">
         <GridItem area="aside" paddingX={5}>
           <GenreList />
@@ -44,6 +38,6 @@ function App() {
       </GridItem>
     </Grid>
   );
-}
+};
 
-export default App;
+export default HomePage;
