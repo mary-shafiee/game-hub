@@ -11,17 +11,10 @@ import getCroppedImageUrl from "../Services/image-url";
 import GenreSkeleton from "./GenreSkeleton";
 import useGameQueryStore from "../store";
 
-// import { Genre } from "../hooks/useGenres";
-export interface Genre {
-  id: number;
-  name: string;
-  image_background: string;
-}
-
 const GenreList = () => {
   const { data, isLoading, error } = useGenres();
-  const selectedGenreId= useGameQueryStore(s => s.gameQuery.genreId)
-  const setGenreId = useGameQueryStore(s => s.setGenreId)
+  const selectedGenreId = useGameQueryStore((s) => s.gameQuery.genreId);
+  const setGenreId = useGameQueryStore((s) => s.setGenreId);
 
   if (error) return null;
   if (isLoading) return <GenreSkeleton />;
