@@ -1,12 +1,15 @@
 import HomePage from "./HomePage";
 import NavBar from "../Components/NavBar";
 import { Outlet } from "react-router-dom";
+import { Box } from "@chakra-ui/react";
 
 const Layout = () => {
   return (
     <div>
       <NavBar />
-      <Outlet />
+      <Box padding={5}>
+        <Outlet />
+      </Box>
     </div>
   );
 };
