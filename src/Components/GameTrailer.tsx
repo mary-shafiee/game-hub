@@ -1,6 +1,5 @@
-import { AspectRatio, Box } from "@chakra-ui/react";
+import { SimpleGrid } from "@chakra-ui/react";
 import useTriler from "../hooks/useTrailers";
-import { Trailer } from "../entities/Trailer";
 
 interface Props {
   id: number;
@@ -12,7 +11,10 @@ const GameTrailer = ({ id }: Props) => {
   const first = movie?.results[0];
 
   return first ? (
-    <video src={first.data[480]} poster={first.preview} controls />
+    <SimpleGrid>
+      <video src={first.data[480]} poster={first.preview} controls />
+    </SimpleGrid>
+    
   ) : null;
 };
 

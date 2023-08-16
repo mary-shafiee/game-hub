@@ -6,16 +6,19 @@ interface Props {
 }
 const GameScreenshots = ({ gamePK }: Props) => {
   const { data, isLoading, error } = useScreenshots(gamePK);
+  if(isLoading) return null;
+  if(error || !data) throw error;
   console.log(data?.results);
   return (
     <SimpleGrid
-      columns={{ sm: 1, md: 2, lg: 3 }}
+      columns={{ base: 1, md: 2 }}
       spacing={5}
       textAlign={"center"}
       padding={"10px"}
+      backgroundColor={'#000'}
     >
       {data?.results.map((images) => (
-        <Image key={images.id} src={images.image} />
+        <Image  key={images.id} src={images.image} />
       ))}
     </SimpleGrid>
   );
