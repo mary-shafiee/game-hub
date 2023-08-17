@@ -1,4 +1,4 @@
-import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 
 import APIClient, { FetchResponse } from "../Services/api-client";
 import ms from "ms";
